@@ -1,18 +1,27 @@
-	var Player= function(power){
+	 function Player(power){
+		this.Power=power;
 		
-		
-		
-		
-	};
+	}
+	var Time=0
+	var t
+	var Player1=new Player(10)
+	var Player2=new Player(0);
+	var Power2=-10;
+	var Power;
+	var AI=true;
 	 var power1;
+	 var power2;
 	var stage = new PIXI.Container();
+	var Start=true;
+	var GameOver=true;
 // create a renderer instance.
+
+
+
 	var renderer = PIXI.autoDetectRenderer(800, 600);
 	var  gameCont = document.getElementById("gameCont");
  	 gameCont.appendChild(renderer.view);
 	// create an new instance of a pixi stage
-	PlayerAttri();
-	
 	
 	
   PIXI.loader.add('background','/img/background.jpg').load(function (loader, resources) {
@@ -24,14 +33,31 @@
      background.scale.y = 2.5;
 	  stage.addChild(background);
 	});
- 
+ PIXI.loader.add('power2','/img/power2.png').load(function (loader, resources) {
+    // This creates a texture from a 'bunny.png' image.
+     power2 = new PIXI.Sprite(resources.power2.texture);
+
+    // Setup the position and scale of the bunny
+   
+	power2.position.x = 120;
+    power2.position.y = 50;
+    power2.scale.x = 3;
+    power2.scale.y = 20;
+	power2.rotation= - Math.PI / 2;
+    // Add the bunny to the scene we are building.
+    stage.addChild(power2);
+	
+
+    // kick off the animation loop (defined below)
+    animate();
+});
 	PIXI.loader.add('power1','/img/power1.png').load(function (loader, resources) {
     // This creates a texture from a 'bunny.png' image.
      power1 = new PIXI.Sprite(resources.power1.texture);
 
     // Setup the position and scale of the bunny
    
-	power1.position.x = 60;
+	power1.position.x = 120;
     power1.position.y = 50;
     power1.scale.x = 3;
     power1.scale.y = 10;
@@ -43,10 +69,11 @@
     // kick off the animation loop (defined below)
     animate();
 });
+
 PIXI.loader.add('mhead','/img/mhead.png').load(function (loader, resources) {
 	  
 	  mhead= new PIXI.Sprite(resources.mhead.texture);
-	  mhead.position.x = -12;
+	  mhead.position.x = -13;
 	  mhead.position.y = 212;
       mhead.scale.x = 1.1;
       mhead.scale.y = 1.1;
@@ -81,21 +108,34 @@ PIXI.loader.add('mhead','/img/mhead.png').load(function (loader, resources) {
 	    // render the stage   
 	    renderer.render(stage);
 	}
+ 
+function EnemyAI(){
+	if(GameOver==false){
+	var AIPB=0.1
+	
+	if(AI==true){
+Player2.Power-=AIPB;
+}
+	}
+}	
+	
 
 
 
-
- function GameRules(){
-	 
-	 
-	 
-	 
-	 
-	 
- }
-
-
-
+ 
+ 
+function Update () {
+	EnemyAI();
+ Power=Player1.Power+Player2.Power;
+  power1.scale.y=Power;
+   if(Power<=0){
+	   Power=0;
+	   GameOver=true;
+ AI=false;
+  }
+   
+}
+setInterval(Update, 30);
 
 
 
@@ -103,17 +143,44 @@ PIXI.loader.add('mhead','/img/mhead.png').load(function (loader, resources) {
 function PlayerAttri() {
 		 
 $(document).click(function(e) { 
+if(Start){
+	GameOver=false;
+		Start=false;
+}
     // Check for left button
-	power1.scale.y += 1;
-	
-	
-	 Player.Power+=1;
-	 
-	 
-	 
+	if(GameOver==false){
     if (e.button == 0) {
-       
-		 
+		 Player1.Power+=0.5;
+		if(Power>=20){
+			Player1.Power-=0.5;
+			console.log("GAMEOVER");
+			 AI=false;
+			 GameOver=true;
+		 }	
+	
+		 console.log(Player1.Power);
+		
+		
     }
+	}
+	
 });
+
 	};
+function timedCount()
+ {
+	 if(GameOver==false){
+	Time+=1;
+  $("#TimeCount").text(Time);
+  }
+  t=setTimeout("timedCount()",1000)
+ 
+ 
+ }
+
+
+	 timedCount();
+	 PlayerAttri();
+	
+	
+	
