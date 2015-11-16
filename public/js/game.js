@@ -158,7 +158,7 @@ if(Start){
 			 GameOver=true;
 		 }	
 	
-		 console.log(Player1.Power);
+		
 		
 		
     }
