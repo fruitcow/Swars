@@ -72,7 +72,7 @@ $("#buttons").hide();
     animate();
 });
 
-PIXI.loader.add('mhead','/img/mhead.png').load(function (loader, resources) {
+PIXI.loader.add('mhead','/img/Mhead.png').load(function (loader, resources) {
 	  
 	  mhead= new PIXI.Sprite(resources.mhead.texture);
 	  mhead.position.x = -13;
