@@ -13,7 +13,9 @@
     	</style>
     	<script src="./js/pixi.js"></script>
 		<script src="./js/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 		</head>
 
 </div>
@@ -40,7 +42,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
 
 <!--我先用一個Button ，你可以改成遊戲結束，再去呼叫我這個Button-->
-<img src = "img/share.png" id = "share_button">
+
   <script type="text/javascript">
 
     $(document).ready(function(){
@@ -76,17 +78,88 @@
       });
     });
 </script>
-
-<div id="wrapper">
-
+<div class="container" style="padding-top:20px;">
+  <div class="row">
+    
+	<div id="wrapper" class="col-md-">
   <h1 class="demo-title">騽大戰</h1>
-  <div id="gameCont">
-  </div>
-
-<h1 id="TimeCount">0</h1>
+  
 <h1>遊戲方法:任意點擊開始。連點滑鼠增加氣量條</h1>
+  <div id="buttons">
+<img src = "img/share.png" id = "share_button"> 
+
+<a href="javascript:location.reload(true)"><img src = "img/Restart.png" id = "Restart"></a>
+  
+
+</div>
+
+  <div id="gameCont">
+ 
 
 
+
+
+  </div>
+<h1 id="TimeCount"></h1>
+<div class="col-md-12">
+      <div class="panel panel-default col-md-6">
+      <div class="panel-body">
+                  <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <h2>Eric Wu</h2>
+                            <p><strong>About: </strong></br>
+                            A programmer who loves the beauty of Ruby;</br>
+                            A writer who likes to share something with people;</br>
+                            A dreamer who believes I can change the world.</br>
+                            </p>
+                            <p><strong>GitHub: </strong> <a href="https://www.github.com/eric0324">Link</a> </p>
+                            <p><strong>Skills: </strong>
+                                <span class="label label-info tags">HTML</span>
+                                <span class="label label-info tags">css3</span>
+                                <span class="label label-info tags">jquery</span>
+                                <span class="label label-info tags">bootstrap3</span>
+                                <span class="label label-info tags">Ruby</span>
+                                <span class="label label-info tags">Ruby on Rails</span>
+                                <span class="label label-info tags">C/C++</span>
+                                <span class="label label-info tags">Android</span>
+                            </p>
+                        </div><!--/col-->
+						
+                     
+						
+                  </div><!--/row-->
+              </div><!--/panel-body-->
+          </div><!--/panel-->
+ <div class="panel panel-default col-md-6">
+      <div class="panel-body">
+                  <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <h2>The Fruitcow</h2>
+                            <p><strong>About: </strong></br>
+                            A Cow that really likes fruits</br>
+                           </br>
+                           </br>
+                            </p>
+                            <p><strong>GitHub: </strong> <a href="https://github.com/fruitcow">Link</a> </p>
+                            <p><strong>Skills: </strong>
+                                <span class="label label-info tags">HTML</span>
+                                <span class="label label-info tags">css3</span>
+                                <span class="label label-info tags">jquery</span>
+                                <span class="label label-info tags">bootstrap3</span>
+                                <span class="label label-info tags">Ruby</span>
+                                <span class="label label-info tags">Ruby on Rails</span>
+								<span class="label label-info tags">Node.js</span>
+                            </p>
+                        </div><!--/col-->
+						
+                       
+						
+                  </div><!--/row-->
+              </div><!--/panel-body-->
+          </div><!--/panel-->
+    </div>
+	</div>
+</div>
 <script src="./js/game.js"></script>
 
 </body>

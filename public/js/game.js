@@ -11,17 +11,18 @@
 	var AI=true;
 	 var power1;
 	 var power2;
-	var stage = new PIXI.Container();
+	
 	var Start=true;
 	var GameOver=true;
 // create a renderer instance.
-
+$("#buttons").hide();
 
 
 	var renderer = PIXI.autoDetectRenderer(800, 600);
 	var  gameCont = document.getElementById("gameCont");
  	 gameCont.appendChild(renderer.view);
 	// create an new instance of a pixi stage
+	var stage = new PIXI.Container();
 	
 	
   PIXI.loader.add('background','/img/background.jpg').load(function (loader, resources) {
@@ -33,6 +34,7 @@
      background.scale.y = 2.5;
 	  stage.addChild(background);
 	});
+	
  PIXI.loader.add('power2','/img/power2.png').load(function (loader, resources) {
     // This creates a texture from a 'bunny.png' image.
      power2 = new PIXI.Sprite(resources.power2.texture);
@@ -79,6 +81,7 @@ PIXI.loader.add('mhead','/img/mhead.png').load(function (loader, resources) {
       mhead.scale.y = 1.1;
 	  mhead.rotation= - Math.PI / 10;
 	  stage.addChild(mhead);
+	  
 	});
 	PIXI.loader.add('phead','/img/Phead.png').load(function (loader, resources) {
 	  
@@ -101,6 +104,17 @@ PIXI.loader.add('mhead','/img/mhead.png').load(function (loader, resources) {
 	  stage.addChild(body);
 	});
 	
+	try{
+var timerText = new PIXI.Text("Time");
+timerText.anchor.x = 20;
+timerText.anchor.y = 20;
+timerText.x = renderer.width / 2;
+ timerText.y = renderer.width / 2;
+stage.addChild(timerText);
+	}catch(e) {console.log("FUCK");}
+
+
+
  
 	function animate() {
 	    requestAnimationFrame( animate );
@@ -131,6 +145,8 @@ function Update () {
    if(Power<=0){
 	   Power=0;
 	   GameOver=true;
+	   $("#buttons").show();
+	    $("#TimeCount").text("遊戲結束，JOJO撐了"+Time+"秒");
  AI=false;
   }
    
@@ -153,9 +169,10 @@ if(Start){
 		 Player1.Power+=0.5;
 		if(Power>=20){
 			Player1.Power-=0.5;
-			console.log("GAMEOVER");
+			//GameOVEr
 			 AI=false;
 			 GameOver=true;
+			 
 		 }	
 	
 		
@@ -171,7 +188,7 @@ function timedCount()
  {
 	 if(GameOver==false){
 	Time+=1;
-  $("#TimeCount").text(Time);
+ 
   }
   t=setTimeout("timedCount()",1000)
  
