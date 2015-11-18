@@ -146,7 +146,7 @@ function Update () {
 	   Power=0;
 	   GameOver=true;
 	   $("#buttons").show();
-	    $("#TimeCount").text("遊戲結束，JOJO撐了"+Time+"秒");
+	    $("#TimeCount").text("遊戲結束，JOJO撐了"+Time+"秒，要分享分數嗎？");
  AI=false;
   }
    
