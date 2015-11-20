@@ -56,8 +56,10 @@ content="https://farm1.staticflickr.com/597/22744641749_e1f63006d5_m.jpg" />
       $('#share_button').click(function(e){
       e.preventDefault();
       var result;
-
-      if(Time <= 1){
+           if(GameWin){
+		    result = 'JOJO大喊：『我贏啦，反攻成功啦。』';
+		   
+		   }else if(Time <= 1){
         result = 'PINPIN大喊：『治大國如烹小鮮。』';
       }else if (Time<=2) {
         result = 'PINPIN大喊：『反腐要老虎、蒼蠅一起打。』';
@@ -157,7 +159,8 @@ content="https://farm1.staticflickr.com/597/22744641749_e1f63006d5_m.jpg" />
        	result = 'JOJO大喊『遠離政治口水，真是無比的爽』';
       }else if (Time<=50) {
         result = 'JOJO大喊『你一定開外掛！治大國如烹小鮮。』';
-      } else {
+      }
+	  else {
         result = '談判破局！'
       }
 

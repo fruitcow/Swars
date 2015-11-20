@@ -14,6 +14,7 @@
 	
 	var Start=true;
 	var GameOver=true;
+	var GameWin=false;
 // create a renderer instance.
 $("#buttons").hide();
 
@@ -149,6 +150,11 @@ function Update () {
 	    $("#TimeCount").text("遊戲結束，JOJO撐了"+Time+"秒，要分享分數嗎？");
  AI=false;
   }
+   if(GameWin){
+	    $("#buttons").show();
+	    $("#TimeCount").text("遊戲勝利，JOJO撐了"+Time+"秒，要分享分數嗎？");
+	   AI=false;
+   }
    
 }
 setInterval(Update, 30);
@@ -167,11 +173,12 @@ if(Start){
 	if(GameOver==false){
     if (e.button == 0) {
 		 Player1.Power+=0.5;
-		if(Power>=20){
+		if(Power>=19.5){
 			Player1.Power-=0.5;
 			//GameOVEr
-			 AI=false;
+			 
 			 GameOver=true;
+			 GameWin=true;
 			 
 		 }	
 	
