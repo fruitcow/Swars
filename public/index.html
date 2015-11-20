@@ -3,6 +3,8 @@
 <html>
   <head>
   <meta charset="utf -8">
+  <meta property="og:image"
+content="https://farm1.staticflickr.com/597/22744641749_e1f63006d5_m.jpg" />
 
   	<style>
     		body {
@@ -16,6 +18,7 @@
 <script src="/js/bootstrap.min.js"></script>
 
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <title>騽大戰</title>
 		</head>
 
 </div>
@@ -25,18 +28,22 @@
 
   <!-- FaceBook初始化 -->
   <script>
-    window.fbAsyncInit = function() {
-    FB.init({appId: '1523662314619098',
-            status: true,
-            cookie: true,
-            xfbml: true});};
-    (function() {
-    var e = document.createElement('script'); e.async = true;
-    e.src = document.location.protocol +
-    '//connect.facebook.net/en_US/all.js';
-    document.getElementById('fb-root').appendChild(e);
-    }());
-  </script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1195336933826129',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
 <!-- FaceBook 貌似要用jQuery -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
@@ -50,17 +57,107 @@
       e.preventDefault();
       var result;
 
-      if(Time <= 10){
+      if(Time <= 1){
+        result = 'PINPIN大喊：『治大國如烹小鮮。』';
+      }else if (Time<=2) {
+        result = 'PINPIN大喊：『反腐要老虎、蒼蠅一起打。』';
+      }else if (Time<=3) {
+        result = 'PINPIN大喊：『把權力關進位度的籠子裡。』';
+      }else if (Time<=4) {
+        result = 'PINPIN大喊：『在國際金融風暴中，中國能夠基本解決13億人口的吃飯問題，已經是對全人類最偉大的貢獻。』';
+      }else if (Time<=5) {
+        result = 'PINPIN大喊：『有些吃飽了沒事幹的外國人，對我們的事情指手畫腳。』';
+      }else if (Time<=6) {
+        result = 'PINPIN大喊：『堅持心心相印。』';
+      }else if (Time<=7) {
+        result = 'PINPIN大喊：『馬來西亞歌手梁靜茹在中國廣為人知。』';
+      }else if (Time<=8) {
+        result = 'PINPIN大喊：『我看天塌不下來』';
+      }else if (Time<=9) {
+        result = 'PINPIN大喊：『中國大飛機事業萬里長征走了又一步，我們一定要有自己的大飛機。』';
+      }else if (Time<=10) {
         result = 'PINPIN大喊：『一個中國』';
+      }else if (Time<=11) {
+        result = 'JOJO大喊：『我只喝一兩杯啦!』';
+      }else if (Time<=12) {
+        result = 'JOJO大喊：『社子島像三等市民，九年來都沒變。』';
+      }else if (Time<=13) {
+        result = 'JOJO大喊：『民調下降是警訊，不是壞事，至少讓候選人有危機意識』';
+      }else if (Time<=14) {
+        result = 'JOJO大喊：『你扁扁不管經濟，我會來管』';
+      }else if (Time<=15) {
+       	result = 'JOJO大喊：『我覺得他們都失去了反省能力。他們要把責任丟到我身上，是不會成功的！』';
+      }else if (Time<=16) {
+        result = 'JOJO大喊：『統一先從2008年兩岸三通開始』';
+      }else if (Time<=17) {
+        result = 'JOJO大喊：『兩岸共同市場就是一中市場。』';
+      }else if (Time<=18) {
+        result = 'JOJO大喊：『現在油價每個禮拜都調整，民眾反而「都習慣了」。』';
+      }else if (Time<=19) {
+        result = 'JOJO大喊：『薪資不能加，是因為廠商錢賺的不夠』';
       }else if (Time<=20) {
-        result = 'PINPIN大喊『一中各表』';
+        result = 'JOJO大喊『一中各表』';
+      }else if (Time<=21) {
+        result = 'JOJO大喊：『在真正危機已接近失控情況下，我們可以把這個電廠整個摧毀，避免輻射外洩。』';
+      }else if (Time<=22) {
+        result = 'JOJO大喊：『你放心，捐款沒有問題』';
+      }else if (Time<=23) {
+        result = 'JOJO大喊：『我也認養原住民十幾年，妳這樣講讓我覺得很難過。』';
+      }else if (Time<=24) {
+        result = 'JOJO大喊：『我不知道你要見我，這不是見到了嗎？』';
+      }else if (Time<=25) {
+        result = 'JOJO大喊：『你可以憋氣2分鐘，真是不簡單』';
+      }else if (Time<=26) {
+        result = 'JOJO大喊『哎呀，反正是選舉啦！說什麼都行啦。』';
+      }else if (Time<=27) {
+        result = 'JOJO大喊『逆轟高飛！』';
+      }else if (Time<=28) {
+        result = 'JOJO大喊『我們國民黨的目標是終極統一。』';
+      }else if (Time<=29) {
+        result = 'JOJO大喊『一個中國就是中華民國。』';
       }else if (Time<=30) {
         result = 'JOJO大喊『反攻大陸』';
+      }else if (Time<=31) {
+        result = 'JOJO說『紐西蘭還出一種很有名的東西叫鹿茸，鹿耳朵裡面的毛』';
+      }else if (Time<=32) {
+        result = 'JOJO大喊『一個便當吃不飽? 你可以再吃一個便當。』';
+      }else if (Time<=33) {
+        result = 'JOJO大喊『我把你們當人看，我要好好把你們教育』';
+      }else if (Time<=34) {
+        result = 'JOJO大喊『謝謝指教，一切依法辦理』';
+      }else if (Time<=35) {
+       	result = 'JOJO大喊『讓我講完再救好不好？』';
+      }else if (Time<=36) {
+        result = 'JOJO大喊『我不知道你要見我，這不是見到了嗎？』';
+      }else if (Time<=37) {
+        result = 'JOJO大喊『手斷了，我也有經驗，打斷手骨顛倒勇』';
+      }else if (Time<=38) {
+        result = 'JOJO大喊『我今天早上一打開報紙才知道』';
+      }else if (Time<=39) {
+        result = 'JOJO大喊『一、二、三、四、五、六、七、八、九、十，謝謝大家，請坐。』';
       }else if (Time<=40) {
-        result = 'JOJO大喊『統一世界』';
+        result = 'JOJO大喊『管他娘怎麼行!』';
+      }else if (Time<=41) {
+        result = 'JOJO大喊『第二任不用討好選民。』';
+      }else if (Time<=42) {
+        result = 'JOJO大喊『我們贏了，在2008年勝選的那一刻。』';
+      }else if (Time<=43) {
+        result = 'JOJO大喊『哪一個笨蛋，把台灣的經濟搞成這個樣子？』';
+      }else if (Time<=44) {
+        result = 'JOJO大喊『Lulu萬歲!』';
+      }else if (Time<=45) {
+        result = 'JOJO大喊『為民興利、兩岸和平』';
+      }else if (Time<=46) {
+        result = 'JOJO大喊『謝謝指教！』';
+      }else if (Time<=47) {
+        result = 'JOJO大喊『謝謝大家！』';
+      }else if (Time<=48) {
+        result = 'JOJO大喊『邁向黃金十年！』';
+      }else if (Time<=49) {
+       	result = 'JOJO大喊『遠離政治口水，真是無比的爽』';
       }else if (Time<=50) {
-        result = '你開外掛齁！';
-      }else {
+        result = 'JOJO大喊『你一定開外掛！治大國如烹小鮮。』';
+      } else {
         result = '談判破局！'
       }
 
@@ -68,40 +165,42 @@
       FB.ui(
         {
         method: 'feed',
-        name: '騽大戰',
-	link: 'http://www.you.can.type.your.url.com',
-        picture: 'shark.jpg',
-        caption: 'JOJO和PINPIN握了' + Time + '秒',
+        name: 'JOJO和PINPIN握了' + Time + '秒',
+	link: 'https://swars.herokuapp.com/',
+        caption: '騽大戰',
         description: result,
-        message: ''
+        picture: 'https://farm1.staticflickr.com/597/22744641749_e1f63006d5_m.jpg'
         });
       });
     });
 </script>
 <div class="container" style="padding-top:20px;">
   <div class="row">
-    
+
 	<div id="wrapper" class="col-md-">
   <h1 class="demo-title">騽大戰</h1>
-  
-<h1>遊戲方法:任意點擊開始。連點滑鼠增加氣量條</h1>
-  <div id="buttons">
-<img src = "img/share.png" id = "share_button"> 
+
+<h3>PINPIN 瘟腥小提醒：任意點擊開始遊戲，連點滑鼠讓手發功。遊戲結束記得分享，會有不同分享台詞喔！</h3>
+<div id="buttons">
+  <h1 id="TimeCount"></h1>
+<img src = "img/share.png" id = "share_button">
 
 <a href="javascript:location.reload(true)"><img src = "img/Restart.png" id = "Restart"></a>
-  
+
 
 </div>
 
-  <div id="gameCont">
- 
+<div id="gameCont">
 
 
 
 
-  </div>
-<h1 id="TimeCount"></h1>
+
+</div>
+
+© 2015 <a href="https://www.facebook.com/dudestwo/?fref=ts">2Dudes</a>, Inc. 
 <div class="col-md-12">
+	
       <div class="panel panel-default col-md-6">
       <div class="panel-body">
                   <div class="row">
@@ -124,9 +223,9 @@
                                 <span class="label label-info tags">Android</span>
                             </p>
                         </div><!--/col-->
-						
-                     
-						
+
+
+
                   </div><!--/row-->
               </div><!--/panel-body-->
           </div><!--/panel-->
@@ -151,9 +250,9 @@
 								<span class="label label-info tags">Node.js</span>
                             </p>
                         </div><!--/col-->
-						
-                       
-						
+
+
+
                   </div><!--/row-->
               </div><!--/panel-body-->
           </div><!--/panel-->

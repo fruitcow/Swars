@@ -72,7 +72,7 @@ $("#buttons").hide();
     animate();
 });
 
-PIXI.loader.add('mhead','/img/mhead.png').load(function (loader, resources) {
+PIXI.loader.add('mhead','/img/Mhead.png').load(function (loader, resources) {
 	  
 	  mhead= new PIXI.Sprite(resources.mhead.texture);
 	  mhead.position.x = -13;
@@ -146,7 +146,7 @@ function Update () {
 	   Power=0;
 	   GameOver=true;
 	   $("#buttons").show();
-	    $("#TimeCount").text("遊戲結束，JOJO撐了"+Time+"秒");
+	    $("#TimeCount").text("遊戲結束，JOJO撐了"+Time+"秒，要分享分數嗎？");
  AI=false;
   }
    
