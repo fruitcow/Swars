@@ -11,7 +11,7 @@
 	var AI=true;
 	 var power1;
 	 var power2;
-	
+	var count = 0;
 	var Start=true;
 	var GameOver=true;
 	var GameWin=false;
@@ -52,7 +52,7 @@ $("#buttons").hide();
 	
 
     // kick off the animation loop (defined below)
-    animate();
+    //animate();
 });
 	PIXI.loader.add('power1','/img/power1.png').load(function (loader, resources) {
     // This creates a texture from a 'bunny.png' image.
@@ -70,7 +70,7 @@ $("#buttons").hide();
 	
 
     // kick off the animation loop (defined below)
-    animate();
+    //animate();
 });
 
 PIXI.loader.add('mhead','/img/Mhead.png').load(function (loader, resources) {
@@ -82,6 +82,7 @@ PIXI.loader.add('mhead','/img/Mhead.png').load(function (loader, resources) {
       mhead.scale.y = 1.1;
 	  mhead.rotation= - Math.PI / 10;
 	  stage.addChild(mhead);
+	  Manimate();
 	  
 	});
 	PIXI.loader.add('phead','/img/Phead.png').load(function (loader, resources) {
@@ -93,6 +94,7 @@ PIXI.loader.add('mhead','/img/Mhead.png').load(function (loader, resources) {
       phead.scale.y = 0.65;
 	  phead.rotation= - Math.PI / 30;
 	  stage.addChild(phead);
+	  Panimate();
 	});
 	
   PIXI.loader.add('body','/img/body.png').load(function (loader, resources) {
@@ -103,6 +105,7 @@ PIXI.loader.add('mhead','/img/Mhead.png').load(function (loader, resources) {
       body.scale.x = 1;
       body.scale.y = 1;
 	  stage.addChild(body);
+	  
 	});
 	
 	try{
@@ -117,9 +120,19 @@ stage.addChild(timerText);
 
 
  
-	function animate() {
-	    requestAnimationFrame( animate );
+	function Manimate() {
+	    requestAnimationFrame( Manimate );
+		 count += 0.05;
+		mhead.position.y = 212+Math.sin(count);
+	
+	    // render the stage   
+	    renderer.render(stage);
+	}
+	function Panimate() {
+	    requestAnimationFrame( Panimate );
+		 
 		
+		phead.position.y = 155+Math.sin(count);
 	    // render the stage   
 	    renderer.render(stage);
 	}
@@ -140,9 +153,11 @@ Player2.Power-=AIPB;
  
  
 function Update () {
+	
 	EnemyAI();
  Power=Player1.Power+Player2.Power;
   power1.scale.y=Power;
+  
    if(Power<=0){
 	   Power=0;
 	   GameOver=true;
