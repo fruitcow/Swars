@@ -45,6 +45,16 @@ content="https://farm1.staticflickr.com/597/22744641749_e1f63006d5_m.jpg" />
    }(document, 'script', 'facebook-jssdk'));
 </script>
 
+<!-- FaceBook 按讚用 -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.5&appId=1195336933826129";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <!-- FaceBook 貌似要用jQuery -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
 
@@ -56,11 +66,11 @@ content="https://farm1.staticflickr.com/597/22744641749_e1f63006d5_m.jpg" />
       $('#share_button').click(function(e){
       e.preventDefault();
       var result;
-           if(GameWin){
-		    result = 'JOJO大喊：『我贏啦，反攻成功啦。』';
+        if(GameWin){
+		    result = 'BZ大喊：『腫花民國、腫花民國、千秋萬世、直到永遠～～～。』';
 		   
-		   }else if(Time <= 1){
-        result = 'PINPIN大喊：『治大國如烹小鮮。』';
+	}else if(Time <= 1){
+        	result = 'PINPIN大喊：『治大國如烹小鮮。』';
       }else if (Time<=2) {
         result = 'PINPIN大喊：『反腐要老虎、蒼蠅一起打。』';
       }else if (Time<=3) {
@@ -181,7 +191,6 @@ content="https://farm1.staticflickr.com/597/22744641749_e1f63006d5_m.jpg" />
   <div class="row">
 
 	<div id="wrapper" class="col-md-">
-  <h1 class="demo-title">騽大戰</h1>
 
 <h3>PINPIN 瘟腥小提醒：任意點擊開始遊戲，連點滑鼠讓手發功。遊戲結束記得分享，會有不同分享台詞喔！</h3>
 <div id="buttons">
@@ -200,7 +209,7 @@ content="https://farm1.staticflickr.com/597/22744641749_e1f63006d5_m.jpg" />
 
 
 </div>
-
+<div class="fb-page" data-href="https://www.facebook.com/dudestwo/?fref=ts" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/dudestwo/?fref=ts"><a href="https://www.facebook.com/dudestwo/?fref=ts">2Dudes</a></blockquote></div></div>   
 © 2015 <a href="https://www.facebook.com/dudestwo/?fref=ts">2Dudes</a>, Inc. 
 <div class="col-md-12">
 	
